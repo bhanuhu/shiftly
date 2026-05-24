@@ -18,10 +18,10 @@ export default function PaymentsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-black">Payment Management</h1>
+        <h1 className="text-2xl font-black sm:text-3xl">Payment Management</h1>
         <p className="mt-2 text-muted">Track customer payments, failed transactions, refunds, and driver payouts.</p>
       </div>
-      <section className="grid gap-4 md:grid-cols-4">
+      <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {["All payments", "Failed payments", "Refunded", "Pending settlements"].map((item, index) => (
           <Card key={item}>
             <CardContent className="p-5">

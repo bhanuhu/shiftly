@@ -20,14 +20,14 @@ export default function LiveOperationsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-black">Live Operations</h1>
+        <h1 className="text-2xl font-black sm:text-3xl">Live Operations</h1>
         <p className="mt-2 text-muted">Real-time dispatch board for drivers, trips, and waiting bookings.</p>
       </div>
       <section className="grid gap-4 xl:grid-cols-[1fr_380px]">
         <Card>
           <CardHeader><CardTitle>City dispatch map</CardTitle></CardHeader>
           <CardContent>
-            <div className="map-grid relative h-[620px] overflow-hidden rounded-lg border border-border bg-card-2">
+            <div className="map-grid relative h-[420px] overflow-hidden rounded-lg border border-border bg-card-2 sm:h-[520px] xl:h-[620px]">
               {idle.map((driver, index) => (
                 <div
                   key={driver.id}

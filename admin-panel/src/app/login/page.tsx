@@ -49,14 +49,14 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-background p-4">
+    <main className="flex min-h-screen items-center justify-center bg-background p-4 sm:p-6">
       <div className="grid w-full max-w-6xl gap-8 lg:grid-cols-[1.05fr_.95fr]">
         <section className="flex flex-col justify-center">
           <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-md border border-accent/25 bg-accent/10 text-accent">
             <Phone size={26} />
           </div>
-          <h1 className="max-w-xl text-5xl font-black leading-tight text-white">SHIFTLY Admin</h1>
-          <p className="mt-4 max-w-xl text-lg leading-8 text-muted">
+          <h1 className="max-w-xl text-4xl font-black leading-tight text-white sm:text-5xl">SHIFTLY Admin</h1>
+          <p className="mt-4 max-w-xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
             A real-time command center for bookings, drivers, pricing, payouts, support, and city operations.
           </p>
           <div className="mt-8 grid gap-3 text-sm text-muted sm:grid-cols-3">

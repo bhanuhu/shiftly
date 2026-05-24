@@ -7,7 +7,7 @@ export default function AnalyticsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-black">Analytics</h1>
+        <h1 className="text-2xl font-black sm:text-3xl">Analytics</h1>
         <p className="mt-2 text-muted">Operational, financial, and driver performance analytics.</p>
       </div>
       <section className="grid gap-4 xl:grid-cols-2">

@@ -28,7 +28,7 @@ export default function BookingDetailPage({ params }: { params: { id: string } }
       </Link>
       <div className="flex flex-col justify-between gap-4 xl:flex-row xl:items-center">
         <div>
-          <h1 className="text-3xl font-black">{booking.id}</h1>
+          <h1 className="break-all text-2xl font-black sm:text-3xl">{booking.id}</h1>
           <div className="mt-2"><BookingStatusBadge status={booking.status} /></div>
         </div>
         <div className="flex gap-2">
@@ -40,7 +40,7 @@ export default function BookingDetailPage({ params }: { params: { id: string } }
         <Card>
           <CardHeader><CardTitle>Route map</CardTitle></CardHeader>
           <CardContent>
-            <div className="map-grid relative h-96 overflow-hidden rounded-lg border border-border bg-card-2">
+            <div className="map-grid relative h-72 overflow-hidden rounded-lg border border-border bg-card-2 sm:h-96">
               <div className="absolute left-[22%] top-[36%] h-4 w-4 rounded-full border border-accent/40 bg-accent/70" />
               <div className="absolute left-[68%] top-[58%] h-4 w-4 rounded-full bg-destructive" />
               <div className="absolute left-[43%] top-[47%] h-5 w-5 rounded-full bg-white shadow-lg" />

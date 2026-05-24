@@ -42,7 +42,7 @@ export default function BookingsPage() {
     <div className="space-y-6">
       <div className="flex flex-col justify-between gap-4 xl:flex-row xl:items-center">
         <div>
-          <h1 className="text-3xl font-black">Booking Management</h1>
+          <h1 className="text-2xl font-black sm:text-3xl">Booking Management</h1>
           <p className="mt-2 text-muted">Live updating bookings with manual operations controls.</p>
         </div>
         <div className="relative w-full xl:max-w-sm">

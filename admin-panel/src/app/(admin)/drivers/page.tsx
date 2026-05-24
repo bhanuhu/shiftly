@@ -47,7 +47,7 @@ export default function DriversPage() {
     <div className="space-y-6">
       <div className="flex flex-col justify-between gap-4 xl:flex-row xl:items-center">
         <div>
-          <h1 className="text-3xl font-black">Driver Management</h1>
+          <h1 className="text-2xl font-black sm:text-3xl">Driver Management</h1>
           <p className="mt-2 text-muted">Approve, suspend, and monitor drivers across live operations.</p>
         </div>
         <div className="relative w-full xl:max-w-sm">

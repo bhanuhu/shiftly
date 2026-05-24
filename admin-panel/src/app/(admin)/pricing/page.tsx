@@ -36,7 +36,7 @@ export default function PricingPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-black">Pricing Management</h1>
+        <h1 className="text-2xl font-black sm:text-3xl">Pricing Management</h1>
         <p className="mt-2 text-muted">Control fare rules, shared delivery discounts, and payout economics.</p>
       </div>
       <Card>

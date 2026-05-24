@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
 
-import { Sidebar } from "@/components/layout/sidebar";
+import { MobileSidebar, Sidebar } from "@/components/layout/sidebar";
 import { Topbar } from "@/components/layout/topbar";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useAuthStore } from "@/store/auth-store";
@@ -13,6 +13,7 @@ export function ProtectedShell({ children }: { children: ReactNode }) {
   const token = useAuthStore((state) => state.accessToken);
   const [ready, setReady] = useState(false);
   const [allowed, setAllowed] = useState(false);
+  const [navOpen, setNavOpen] = useState(false);
 
   useEffect(() => {
     const hasCookie = document.cookie.includes("shiftly_admin_token=");
@@ -43,9 +44,10 @@ export function ProtectedShell({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background">
       <Sidebar />
+      <MobileSidebar open={navOpen} onClose={() => setNavOpen(false)} />
       <div className="lg:pl-72">
-        <Topbar />
-        <main className="p-4 lg:p-8">{children}</main>
+        <Topbar onMenuClick={() => setNavOpen(true)} />
+        <main className="p-3 sm:p-4 lg:p-8">{children}</main>
       </div>
     </div>
   );

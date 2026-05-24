@@ -17,7 +17,7 @@ export default function SupportPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-black">Support and Incidents</h1>
+        <h1 className="text-2xl font-black sm:text-3xl">Support and Incidents</h1>
         <p className="mt-2 text-muted">Resolve complaints, disputes, failed deliveries, and operational escalations.</p>
       </div>
       <Card>

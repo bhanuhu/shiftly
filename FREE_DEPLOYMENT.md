@@ -78,8 +78,8 @@ Deploy `/Users/bhanuaggarwal/Desktop/shiftly/admin-panel` to Vercel.
 Set:
 
 ```env
-NEXT_PUBLIC_API_BASE_URL=https://your-backend-domain
-NEXT_PUBLIC_WS_URL=wss://your-backend-domain
+NEXT_PUBLIC_API_BASE_URL=https://shiftly-u6zd.onrender.com
+NEXT_PUBLIC_WS_URL=wss://shiftly-u6zd.onrender.com
 ```
 
 After Vercel gives you the admin URL, add it to the backend `CORS_ORIGINS`.
@@ -89,8 +89,8 @@ After Vercel gives you the admin URL, add it to the backend `CORS_ORIGINS`.
 In `/Users/bhanuaggarwal/Desktop/shiftly/shiftly-driver/.env`:
 
 ```env
-EXPO_PUBLIC_API_BASE_URL=https://your-backend-domain
-EXPO_PUBLIC_WS_URL=wss://your-backend-domain
+EXPO_PUBLIC_API_BASE_URL=https://shiftly-u6zd.onrender.com
+EXPO_PUBLIC_WS_URL=wss://shiftly-u6zd.onrender.com
 ```
 
 Then restart Expo so it picks up the env values.

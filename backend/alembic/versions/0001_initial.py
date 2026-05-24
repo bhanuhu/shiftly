@@ -17,9 +17,11 @@ depends_on = None
 
 
 def upgrade() -> None:
-    user_role = postgresql.ENUM("driver", "customer", "admin", name="user_role")
-    verification_status = postgresql.ENUM("pending", "approved", "rejected", "suspended", name="verification_status")
-    booking_type = postgresql.ENUM("express", "shared", name="booking_type")
+    user_role = postgresql.ENUM("driver", "customer", "admin", name="user_role", create_type=False)
+    verification_status = postgresql.ENUM(
+        "pending", "approved", "rejected", "suspended", name="verification_status", create_type=False
+    )
+    booking_type = postgresql.ENUM("express", "shared", name="booking_type", create_type=False)
     booking_status = postgresql.ENUM(
         "pending",
         "searching_driver",
@@ -30,9 +32,10 @@ def upgrade() -> None:
         "delivered",
         "cancelled",
         name="booking_status",
+        create_type=False,
     )
-    payment_status = postgresql.ENUM("pending", "paid", "failed", "refunded", name="payment_status")
-    payout_status = postgresql.ENUM("pending", "processing", "paid", "failed", name="payout_status")
+    payment_status = postgresql.ENUM("pending", "paid", "failed", "refunded", name="payment_status", create_type=False)
+    payout_status = postgresql.ENUM("pending", "processing", "paid", "failed", name="payout_status", create_type=False)
     for enum in [user_role, verification_status, booking_type, booking_status, payment_status, payout_status]:
         enum.create(op.get_bind(), checkfirst=True)
 

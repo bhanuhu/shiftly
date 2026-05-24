@@ -41,9 +41,9 @@ export default function BookingDetailPage({ params }: { params: { id: string } }
           <CardHeader><CardTitle>Route map</CardTitle></CardHeader>
           <CardContent>
             <div className="map-grid relative h-96 overflow-hidden rounded-lg border border-border bg-card-2">
-              <div className="absolute left-[22%] top-[36%] h-4 w-4 rounded-full bg-accent" />
+              <div className="absolute left-[22%] top-[36%] h-4 w-4 rounded-full border border-accent/40 bg-accent/70" />
               <div className="absolute left-[68%] top-[58%] h-4 w-4 rounded-full bg-destructive" />
-              <div className="absolute left-[43%] top-[47%] h-5 w-5 rounded-full bg-white shadow-glow" />
+              <div className="absolute left-[43%] top-[47%] h-5 w-5 rounded-full bg-white shadow-lg" />
               <div className="absolute bottom-4 left-4 rounded-md bg-background/80 px-3 py-2 text-sm">
                 {booking.pickup} → {booking.drop}
               </div>
@@ -66,7 +66,7 @@ export default function BookingDetailPage({ params }: { params: { id: string } }
         <CardContent className="grid gap-3 md:grid-cols-6">
           {timeline.map((item, index) => (
             <div key={item} className="rounded-lg border border-border bg-white/5 p-4">
-              <div className="mb-3 flex h-7 w-7 items-center justify-center rounded-full bg-accent text-xs font-black text-background">{index + 1}</div>
+              <div className="mb-3 flex h-7 w-7 items-center justify-center rounded-full border border-accent/30 bg-accent/15 text-xs font-black text-accent">{index + 1}</div>
               <div className="text-sm font-semibold capitalize">{item}</div>
             </div>
           ))}

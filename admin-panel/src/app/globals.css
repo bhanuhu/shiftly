@@ -12,7 +12,7 @@
 
 body {
   margin: 0;
-  background: #08142a;
+  background: #07111f;
   color: #f8fafc;
 }
 
@@ -28,7 +28,7 @@ body {
 
 .map-grid {
   background-image:
-    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+    linear-gradient(rgba(226,232,240,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(226,232,240,.045) 1px, transparent 1px);
   background-size: 42px 42px;
 }

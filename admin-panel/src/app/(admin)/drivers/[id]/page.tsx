@@ -54,7 +54,7 @@ export default function DriverDetailPage({ params }: { params: { id: string } })
           <CardHeader><CardTitle>Live location</CardTitle></CardHeader>
           <CardContent>
             <div className="map-grid relative h-72 overflow-hidden rounded-lg border border-border bg-card-2">
-              <div className="absolute left-[58%] top-[42%] h-5 w-5 rounded-full bg-accent shadow-glow" />
+              <div className="absolute left-[58%] top-[42%] h-5 w-5 rounded-full border border-accent/40 bg-accent/70 shadow-lg" />
               <div className="absolute bottom-4 left-4 rounded-md bg-background/80 px-3 py-2 text-sm text-muted">
                 {driver.currentLat ?? 28.61}, {driver.currentLng ?? 77.2}
               </div>

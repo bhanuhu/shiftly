@@ -52,7 +52,7 @@ export default function LoginPage() {
     <main className="flex min-h-screen items-center justify-center bg-background p-4">
       <div className="grid w-full max-w-6xl gap-8 lg:grid-cols-[1.05fr_.95fr]">
         <section className="flex flex-col justify-center">
-          <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-md bg-accent text-background">
+          <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-md border border-accent/25 bg-accent/10 text-accent">
             <Phone size={26} />
           </div>
           <h1 className="max-w-xl text-5xl font-black leading-tight text-white">SHIFTLY Admin</h1>
@@ -61,13 +61,13 @@ export default function LoginPage() {
           </p>
           <div className="mt-8 grid gap-3 text-sm text-muted sm:grid-cols-3">
             {["Live dispatch", "Driver approvals", "Revenue control"].map((item) => (
-              <div key={item} className="rounded-lg border border-border bg-white/5 p-4">
+              <div key={item} className="rounded-lg border border-border bg-white/[0.04] p-4">
                 {item}
               </div>
             ))}
           </div>
         </section>
-        <Card className="shadow-glow">
+        <Card className="shadow-2xl">
           <CardContent className="p-6 sm:p-8">
             <div className="mb-8">
               <h2 className="text-2xl font-bold">Admin login</h2>

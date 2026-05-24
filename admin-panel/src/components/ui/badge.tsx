@@ -7,7 +7,7 @@ const variants = {
   warning: "bg-warning/15 text-warning",
   danger: "bg-destructive/15 text-destructive",
   neutral: "bg-white/10 text-muted",
-  accent: "bg-accent/15 text-accent"
+  accent: "border border-accent/20 bg-accent/10 text-accent"
 };
 
 export function Badge({

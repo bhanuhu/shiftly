@@ -6,19 +6,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#08142A",
+        background: "#07111F",
         foreground: "#F8FAFC",
-        card: "#0D1B33",
-        "card-2": "#10223F",
-        border: "rgba(255,255,255,0.10)",
-        muted: "#8EA0B8",
-        accent: "#8BEA2B",
+        card: "#0B1728",
+        "card-2": "#101D30",
+        border: "rgba(226,232,240,0.10)",
+        muted: "#94A3B8",
+        accent: "#A3D65C",
         destructive: "#EF4444",
         warning: "#F59E0B",
-        success: "#22C55E"
+        success: "#34D399"
       },
       boxShadow: {
-        glow: "0 0 0 1px rgba(139,234,43,0.18), 0 18px 50px rgba(0,0,0,0.32)"
+        glow: "0 18px 48px rgba(0,0,0,0.34), 0 0 0 1px rgba(226,232,240,0.08)"
       }
     }
   },

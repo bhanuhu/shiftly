@@ -34,7 +34,7 @@ export function Sidebar() {
   return (
     <aside className="fixed inset-y-0 left-0 z-30 hidden w-72 border-r border-border bg-background/95 p-5 lg:block">
       <Link href="/dashboard" className="mb-8 flex items-center gap-3">
-        <div className="flex h-11 w-11 items-center justify-center rounded-md bg-accent text-background">
+        <div className="flex h-11 w-11 items-center justify-center rounded-md border border-accent/25 bg-accent/10 text-accent">
           <Users size={22} />
         </div>
         <div>
@@ -51,8 +51,8 @@ export function Sidebar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "flex h-11 items-center gap-3 rounded-md px-3 text-sm font-semibold text-muted transition hover:bg-white/10 hover:text-white",
-                active && "bg-accent text-background hover:bg-accent hover:text-background"
+                "flex h-11 items-center gap-3 rounded-md px-3 text-sm font-semibold text-muted transition hover:bg-white/[0.07] hover:text-white",
+                active && "border border-accent/20 bg-accent/10 text-accent hover:bg-accent/12 hover:text-accent"
               )}
             >
               <Icon size={18} />

@@ -23,7 +23,7 @@ export default function SettingsPage() {
             {["Shared delivery batching", "Auto reassignment", "Driver payout automation"].map((item) => (
               <label key={item} className="flex items-center justify-between rounded-md bg-white/5 p-3">
                 <span>{item}</span>
-                <input type="checkbox" defaultChecked className="h-5 w-5 accent-[#8BEA2B]" />
+                <input type="checkbox" defaultChecked className="h-5 w-5 accent-[#A3D65C]" />
               </label>
             ))}
             <Button><Save size={16} />Save settings</Button>

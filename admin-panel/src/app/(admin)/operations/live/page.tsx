@@ -31,7 +31,7 @@ export default function LiveOperationsPage() {
               {idle.map((driver, index) => (
                 <div
                   key={driver.id}
-                  className="absolute flex h-9 w-9 items-center justify-center rounded-full bg-accent text-background shadow-glow"
+                  className="absolute flex h-9 w-9 items-center justify-center rounded-full border border-accent/30 bg-accent/15 text-accent shadow-lg"
                   style={{ left: `${18 + index * 16}%`, top: `${24 + (index % 3) * 18}%` }}
                   title={driver.name}
                 >
@@ -41,13 +41,13 @@ export default function LiveOperationsPage() {
               {active.map((booking, index) => (
                 <div
                   key={booking.id}
-                  className="absolute rounded-md bg-white px-3 py-2 text-xs font-bold text-background"
+                  className="absolute rounded-md border border-border bg-white/90 px-3 py-2 text-xs font-bold text-background shadow-lg"
                   style={{ left: `${35 + index * 12}%`, top: `${52 + index * 8}%` }}
                 >
                   {booking.id}
                 </div>
               ))}
-              <div className="absolute bottom-4 left-4 flex gap-3 rounded-md bg-background/85 p-3 text-sm text-muted">
+              <div className="absolute bottom-4 left-4 flex gap-3 rounded-md border border-border bg-background/85 p-3 text-sm text-muted shadow-lg">
                 <span className="flex items-center gap-2"><Truck size={16} className="text-accent" />Online drivers</span>
                 <span className="flex items-center gap-2"><Route size={16} className="text-white" />Active trips</span>
               </div>

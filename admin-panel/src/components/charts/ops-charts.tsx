@@ -4,7 +4,7 @@ import { Area, AreaChart, Bar, BarChart, CartesianGrid, Cell, Pie, PieChart, Res
 
 import { chartSeries, statusDistribution, zones } from "@/services/mock-data";
 
-const colors = ["#8BEA2B", "#38BDF8", "#F59E0B", "#22C55E", "#EF4444"];
+const colors = ["#A3D65C", "#60A5FA", "#F59E0B", "#34D399", "#F87171"];
 
 export function BookingsAreaChart() {
   return (
@@ -12,15 +12,15 @@ export function BookingsAreaChart() {
       <AreaChart data={chartSeries}>
         <defs>
           <linearGradient id="bookings" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="5%" stopColor="#8BEA2B" stopOpacity={0.7} />
-            <stop offset="95%" stopColor="#8BEA2B" stopOpacity={0} />
+            <stop offset="5%" stopColor="#A3D65C" stopOpacity={0.34} />
+            <stop offset="95%" stopColor="#A3D65C" stopOpacity={0} />
           </linearGradient>
         </defs>
-        <CartesianGrid stroke="rgba(255,255,255,.08)" vertical={false} />
+        <CartesianGrid stroke="rgba(226,232,240,.075)" vertical={false} />
         <XAxis dataKey="label" stroke="#8EA0B8" />
         <YAxis stroke="#8EA0B8" />
         <Tooltip contentStyle={{ background: "#0D1B33", border: "1px solid rgba(255,255,255,.1)", borderRadius: 8 }} />
-        <Area type="monotone" dataKey="bookings" stroke="#8BEA2B" fill="url(#bookings)" strokeWidth={2} />
+        <Area type="monotone" dataKey="bookings" stroke="#A3D65C" fill="url(#bookings)" strokeWidth={2} />
       </AreaChart>
     </ResponsiveContainer>
   );
@@ -30,11 +30,11 @@ export function RevenueBarChart() {
   return (
     <ResponsiveContainer width="100%" height={260}>
       <BarChart data={chartSeries}>
-        <CartesianGrid stroke="rgba(255,255,255,.08)" vertical={false} />
+        <CartesianGrid stroke="rgba(226,232,240,.075)" vertical={false} />
         <XAxis dataKey="label" stroke="#8EA0B8" />
         <YAxis stroke="#8EA0B8" />
         <Tooltip contentStyle={{ background: "#0D1B33", border: "1px solid rgba(255,255,255,.1)", borderRadius: 8 }} />
-        <Bar dataKey="revenue" fill="#8BEA2B" radius={[6, 6, 0, 0]} />
+        <Bar dataKey="revenue" fill="#A3D65C" radius={[6, 6, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>
   );
@@ -47,7 +47,7 @@ export function ZonesChart() {
         <XAxis type="number" stroke="#8EA0B8" />
         <YAxis dataKey="zone" type="category" stroke="#8EA0B8" width={92} />
         <Tooltip contentStyle={{ background: "#0D1B33", border: "1px solid rgba(255,255,255,.1)", borderRadius: 8 }} />
-        <Bar dataKey="active" fill="#38BDF8" radius={[0, 6, 6, 0]} />
+        <Bar dataKey="active" fill="#60A5FA" radius={[0, 6, 6, 0]} />
       </BarChart>
     </ResponsiveContainer>
   );

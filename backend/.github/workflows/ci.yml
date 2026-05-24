@@ -1,0 +1,55 @@
+name: Backend CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  lint-test-build:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: shiftly
+          POSTGRES_PASSWORD: shiftly
+          POSTGRES_DB: shiftly_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U shiftly -d shiftly_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+
+    env:
+      ENVIRONMENT: test
+      DATABASE_URL: postgresql+asyncpg://shiftly:shiftly@localhost:5432/shiftly_test
+      REDIS_URL: redis://localhost:6379/0
+      JWT_SECRET_KEY: ci-secret
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        working-directory: backend
+        run: pip install -r requirements.txt
+      - name: Lint
+        working-directory: backend
+        run: ruff check .
+      - name: Migrate
+        working-directory: backend
+        run: alembic upgrade head
+      - name: Test
+        working-directory: backend
+        run: pytest
+      - name: Build image
+        working-directory: backend
+        run: docker build -t shiftly-backend:${{ github.sha }} .

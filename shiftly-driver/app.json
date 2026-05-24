@@ -1,0 +1,52 @@
+{
+  "expo": {
+    "name": "SHIFTLY Driver",
+    "slug": "shiftly-driver",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "newArchEnabled": true,
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "backgroundColor": "#08142A",
+      "resizeMode": "contain"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.shiftly.driver",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "SHIFTLY needs your location to show nearby delivery requests.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "SHIFTLY needs background location to keep customers updated.",
+        "UIBackgroundModes": [
+          "location",
+          "fetch"
+        ]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#08142A"
+      },
+      "package": "com.shiftly.driver",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "SHIFTLY needs background location to keep customers updated.",
+          "locationWhenInUsePermission": "SHIFTLY needs your location to show nearby delivery requests."
+        }
+      ],
+      "expo-asset",
+      "expo-font"
+    ]
+  }
+}

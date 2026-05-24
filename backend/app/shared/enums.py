@@ -1,4 +1,11 @@
 from enum import StrEnum
+from typing import TypeVar
+
+EnumT = TypeVar("EnumT", bound=StrEnum)
+
+
+def enum_values(enum_class: type[EnumT]) -> list[str]:
+    return [member.value for member in enum_class]
 
 
 class UserRole(StrEnum):

@@ -11,6 +11,8 @@ class Base(DeclarativeBase):
     pass
 
 
+from app.shared import models_imports  # noqa: E402,F401
+
 settings = get_settings()
 engine = create_async_engine(
     settings.database_url,

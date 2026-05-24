@@ -7,7 +7,7 @@ from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.database import Base
-from app.shared.enums import PayoutStatus, VerificationStatus
+from app.shared.enums import PayoutStatus, VerificationStatus, enum_values
 from app.shared.models import TimestampMixin, UUIDPrimaryKeyMixin
 
 
@@ -21,7 +21,7 @@ class Driver(Base, UUIDPrimaryKeyMixin, TimestampMixin):
     license_url: Mapped[str | None] = mapped_column(String(500))
     profile_photo: Mapped[str | None] = mapped_column(String(500))
     verification_status: Mapped[VerificationStatus] = mapped_column(
-        Enum(VerificationStatus, name="verification_status"), default=VerificationStatus.PENDING
+        Enum(VerificationStatus, name="verification_status", values_callable=enum_values), default=VerificationStatus.PENDING
     )
     online_status: Mapped[bool] = mapped_column(Boolean, default=False)
     current_lat: Mapped[Decimal | None] = mapped_column(Numeric(9, 6))
@@ -49,6 +49,8 @@ class DriverEarning(Base, UUIDPrimaryKeyMixin, TimestampMixin):
     driver_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("drivers.id"), index=True)
     booking_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("bookings.id"), index=True)
     amount: Mapped[Decimal] = mapped_column(Numeric(12, 2))
-    payout_status: Mapped[PayoutStatus] = mapped_column(Enum(PayoutStatus, name="payout_status"), default=PayoutStatus.PENDING)
+    payout_status: Mapped[PayoutStatus] = mapped_column(
+        Enum(PayoutStatus, name="payout_status", values_callable=enum_values), default=PayoutStatus.PENDING
+    )
 
     driver: Mapped[Driver] = relationship(back_populates="earnings")
